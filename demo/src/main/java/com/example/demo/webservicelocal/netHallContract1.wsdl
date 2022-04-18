@@ -1,0 +1,184 @@
+<?xml version='1.0' encoding='UTF-8'?><wsdl:definitions xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:tns="http://netHallContract.mdm.com" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:ns1="http://schemas.xmlsoap.org/soap/http" name="netHallContractWebService" targetNamespace="http://netHallContract.mdm.com">
+  <wsdl:types>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:tns="http://netHallContract.mdm.com" elementFormDefault="unqualified" targetNamespace="http://netHallContract.mdm.com" version="1.0">
+
+  <xs:element name="importPackage" type="tns:importPackage"/>
+
+  <xs:element name="importPackageResponse" type="tns:importPackageResponse"/>
+
+  <xs:element name="updateContractOfIntentionState" type="tns:updateContractOfIntentionState"/>
+
+  <xs:element name="updateContractOfIntentionStateResponse" type="tns:updateContractOfIntentionStateResponse"/>
+
+  <xs:complexType name="importPackage">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="arg0" type="tns:setmealVO"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="setmealVO">
+    <xs:sequence>
+      <xs:element maxOccurs="unbounded" minOccurs="0" name="fieldList" nillable="true" type="tns:htSetmealPackagefieldVO"/>
+      <xs:element minOccurs="0" name="htSetmealVO" type="tns:htSetmealVO"/>
+      <xs:element maxOccurs="unbounded" minOccurs="0" name="index" nillable="true" type="tns:htSettlementIndexVO"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="htSetmealPackagefieldVO">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="id" type="xs:string"/>
+      <xs:element minOccurs="0" name="indexKey" type="xs:string"/>
+      <xs:element minOccurs="0" name="indexValue" type="xs:string"/>
+      <xs:element minOccurs="0" name="setmealId" type="xs:string"/>
+      <xs:element minOccurs="0" name="setmealNo" type="xs:string"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="htSetmealVO">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="comboType" type="xs:string"/>
+      <xs:element minOccurs="0" name="createdBy" type="xs:string"/>
+      <xs:element minOccurs="0" name="createdTime" type="xs:dateTime"/>
+      <xs:element minOccurs="0" name="description" type="xs:string"/>
+      <xs:element minOccurs="0" name="electricityPrice" type="xs:string"/>
+      <xs:element minOccurs="0" name="id" type="xs:string"/>
+      <xs:element maxOccurs="unbounded" minOccurs="0" name="imgs" nillable="true" type="xs:string"/>
+      <xs:element minOccurs="0" name="orgCode" type="xs:string"/>
+      <xs:element minOccurs="0" name="picture" type="xs:string"/>
+      <xs:element minOccurs="0" name="setMealCode" type="xs:string"/>
+      <xs:element minOccurs="0" name="setMealName" type="xs:string"/>
+      <xs:element minOccurs="0" name="settlementScheme" type="xs:string"/>
+      <xs:element minOccurs="0" name="shortdes" type="xs:string"/>
+      <xs:element minOccurs="0" name="tempdata1" type="xs:string"/>
+      <xs:element minOccurs="0" name="tempdata2" type="xs:string"/>
+      <xs:element minOccurs="0" name="tempdata3" type="xs:string"/>
+      <xs:element minOccurs="0" name="tempdata4" type="xs:string"/>
+      <xs:element minOccurs="0" name="updatedBy" type="xs:string"/>
+      <xs:element minOccurs="0" name="updatedTime" type="xs:dateTime"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="htSettlementIndexVO">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="defaultValue" type="xs:string"/>
+      <xs:element minOccurs="0" name="describition" type="xs:string"/>
+      <xs:element minOccurs="0" name="measurementUnit" type="xs:string"/>
+      <xs:element minOccurs="0" name="name" type="xs:string"/>
+      <xs:element minOccurs="0" name="saleContract" type="xs:string"/>
+      <xs:element minOccurs="0" name="settleRules" type="xs:string"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="importPackageResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="return" type="tns:objectRestResponse"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="objectRestResponse">
+    <xs:complexContent>
+      <xs:extension base="tns:baseResponse">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="data" type="xs:anyType"/>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+
+  <xs:complexType name="baseResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="errorMsg" type="xs:string"/>
+      <xs:element minOccurs="0" name="msg" type="xs:string"/>
+      <xs:element name="rel" type="xs:boolean"/>
+      <xs:element name="status" type="xs:int"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="updateContractOfIntentionState">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="arg0" type="tns:htOrderStateVO"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="htOrderStateVO">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="approvalOpinion" type="xs:string"/>
+      <xs:element minOccurs="0" name="approvalStatus" type="xs:string"/>
+      <xs:element minOccurs="0" name="contractOrderId" type="xs:string"/>
+      <xs:element maxOccurs="unbounded" minOccurs="0" name="meterNumberVOS" nillable="true" type="tns:meterNumberVO"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="meterNumberVO">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="approvalOpinion" type="xs:string"/>
+      <xs:element minOccurs="0" name="meterNumber" type="xs:string"/>
+      <xs:element minOccurs="0" name="status" type="xs:string"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="updateContractOfIntentionStateResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="return" type="tns:objectRestResponse"/>
+    </xs:sequence>
+  </xs:complexType>
+
+</xs:schema>
+  </wsdl:types>
+  <wsdl:message name="importPackage">
+    <wsdl:part element="tns:importPackage" name="parameters">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="updateContractOfIntentionStateResponse">
+    <wsdl:part element="tns:updateContractOfIntentionStateResponse" name="parameters">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="updateContractOfIntentionState">
+    <wsdl:part element="tns:updateContractOfIntentionState" name="parameters">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="importPackageResponse">
+    <wsdl:part element="tns:importPackageResponse" name="parameters">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:portType name="netHallContractWebService">
+    <wsdl:operation name="importPackage">
+      <wsdl:input message="tns:importPackage" name="importPackage">
+    </wsdl:input>
+      <wsdl:output message="tns:importPackageResponse" name="importPackageResponse">
+    </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="updateContractOfIntentionState">
+      <wsdl:input message="tns:updateContractOfIntentionState" name="updateContractOfIntentionState">
+    </wsdl:input>
+      <wsdl:output message="tns:updateContractOfIntentionStateResponse" name="updateContractOfIntentionStateResponse">
+    </wsdl:output>
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="netHallContractWebServiceSoapBinding" type="tns:netHallContractWebService">
+    <soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+    <wsdl:operation name="importPackage">
+      <soap:operation soapAction="" style="document"/>
+      <wsdl:input name="importPackage">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="importPackageResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="updateContractOfIntentionState">
+      <soap:operation soapAction="" style="document"/>
+      <wsdl:input name="updateContractOfIntentionState">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="updateContractOfIntentionStateResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="netHallContractWebService">
+    <wsdl:port binding="tns:netHallContractWebServiceSoapBinding" name="NetHallContractWebServiceImplPort">
+      <soap:address location="http://10.126.15.230:9220/gapi/webservice/netHallContract"/>
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

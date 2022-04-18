@@ -1,0 +1,490 @@
+<?xml version='1.0' encoding='UTF-8'?><wsdl:definitions xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:tns="http://service.dlyx.ccie.com" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:ns1="http://schemas.xmlsoap.org/soap/http" name="customerWebService" targetNamespace="http://service.dlyx.ccie.com">
+  <wsdl:types>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:tns="http://service.dlyx.ccie.com" elementFormDefault="unqualified" targetNamespace="http://service.dlyx.ccie.com" version="1.0">
+
+  <xs:element name="deleteHighSeas" type="tns:deleteHighSeas"/>
+
+  <xs:element name="deleteHighSeasResponse" type="tns:deleteHighSeasResponse"/>
+
+  <xs:element name="insert" type="tns:insert"/>
+
+  <xs:element name="insertCrew" type="tns:insertCrew"/>
+
+  <xs:element name="insertCrewResponse" type="tns:insertCrewResponse"/>
+
+  <xs:element name="insertHighSeas" type="tns:insertHighSeas"/>
+
+  <xs:element name="insertHighSeasResponse" type="tns:insertHighSeasResponse"/>
+
+  <xs:element name="insertResponse" type="tns:insertResponse"/>
+
+  <xs:complexType name="insert">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="arg0" type="tns:customerReqVo"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="customerReqVo">
+    <xs:sequence>
+      <xs:element maxOccurs="unbounded" minOccurs="0" name="contactsVos" nillable="true" type="tns:tContactsVo"/>
+      <xs:element minOccurs="0" name="customerVo" type="tns:tCustomerVo"/>
+      <xs:element maxOccurs="unbounded" minOccurs="0" name="historicalConsumptionVos" nillable="true" type="tns:tHistoricalConsumptionVo"/>
+      <xs:element maxOccurs="unbounded" minOccurs="0" name="noVos" nillable="true" type="tns:tNoVo"/>
+      <xs:element maxOccurs="unbounded" minOccurs="0" name="TAgencyRelationshipVos" nillable="true" type="tns:tAgencyRelationshipVo"/>
+      <xs:element minOccurs="0" name="TBankAccountVo" type="tns:tBankAccountVo"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="tContactsVo">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="belongDepartment" type="xs:string"/>
+      <xs:element minOccurs="0" name="belongFormalCustomer" type="xs:string"/>
+      <xs:element minOccurs="0" name="birth" type="xs:dateTime"/>
+      <xs:element minOccurs="0" name="contactId" type="xs:string"/>
+      <xs:element minOccurs="0" name="createOrganisation" type="xs:string"/>
+      <xs:element minOccurs="0" name="customer" type="xs:string"/>
+      <xs:element minOccurs="0" name="customerNo" type="xs:string"/>
+      <xs:element minOccurs="0" name="email" type="xs:string"/>
+      <xs:element minOccurs="0" name="fax" type="xs:string"/>
+      <xs:element minOccurs="0" name="gender" type="xs:string"/>
+      <xs:element minOccurs="0" name="id" type="xs:string"/>
+      <xs:element minOccurs="0" name="mobilePhone" type="xs:string"/>
+      <xs:element minOccurs="0" name="name" type="xs:string"/>
+      <xs:element minOccurs="0" name="netHall" type="xs:string"/>
+      <xs:element minOccurs="0" name="post" type="xs:string"/>
+      <xs:element minOccurs="0" name="tellphone" type="xs:string"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="tCustomerVo">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="abbreviation" type="xs:string"/>
+      <xs:element minOccurs="0" name="addressZipcode" type="xs:string"/>
+      <xs:element minOccurs="0" name="adimitTime" type="xs:dateTime"/>
+      <xs:element minOccurs="0" name="admitStatus" type="xs:string"/>
+      <xs:element minOccurs="0" name="BPNo" type="xs:string"/>
+      <xs:element minOccurs="0" name="bank" type="xs:string"/>
+      <xs:element minOccurs="0" name="bankAccount" type="xs:string"/>
+      <xs:element minOccurs="0" name="belongDepartment" type="xs:string"/>
+      <xs:element minOccurs="0" name="businessNo" type="xs:string"/>
+      <xs:element minOccurs="0" name="capitalType" type="xs:string"/>
+      <xs:element minOccurs="0" name="city" type="xs:string"/>
+      <xs:element minOccurs="0" name="code" type="xs:string"/>
+      <xs:element minOccurs="0" name="county" type="xs:string"/>
+      <xs:element minOccurs="0" name="customerBelongGroup" type="xs:string"/>
+      <xs:element minOccurs="0" name="customerClass" type="xs:string"/>
+      <xs:element minOccurs="0" name="customerManager" type="xs:string"/>
+      <xs:element minOccurs="0" name="customerStatusCode" type="xs:string"/>
+      <xs:element minOccurs="0" name="customerTagM" type="xs:string"/>
+      <xs:element minOccurs="0" name="customerTypeC" type="xs:string"/>
+      <xs:element minOccurs="0" name="customerTypeM" type="xs:string"/>
+      <xs:element minOccurs="0" name="fileUrl1" type="xs:string"/>
+      <xs:element minOccurs="0" name="heatingCompany" type="xs:string"/>
+      <xs:element minOccurs="0" name="heatingCompanyType" type="xs:string"/>
+      <xs:element minOccurs="0" name="heatingMethod" type="xs:string"/>
+      <xs:element minOccurs="0" name="heatingType" type="xs:string"/>
+      <xs:element minOccurs="0" name="highTech" type="xs:string"/>
+      <xs:element minOccurs="0" name="id" type="xs:string"/>
+      <xs:element minOccurs="0" name="important" type="xs:string"/>
+      <xs:element minOccurs="0" name="industrial" type="xs:string"/>
+      <xs:element minOccurs="0" name="industry" type="xs:string"/>
+      <xs:element minOccurs="0" name="industryE" type="xs:string"/>
+      <xs:element minOccurs="0" name="isRegistered" type="xs:string"/>
+      <xs:element minOccurs="0" name="jobNumber" type="xs:string"/>
+      <xs:element minOccurs="0" name="lastyear" type="xs:decimal"/>
+      <xs:element minOccurs="0" name="legalPerson" type="xs:string"/>
+      <xs:element minOccurs="0" name="majorProject" type="xs:string"/>
+      <xs:element minOccurs="0" name="mdMno" type="xs:string"/>
+      <xs:element minOccurs="0" name="name" type="xs:string"/>
+      <xs:element minOccurs="0" name="netId" type="xs:string"/>
+      <xs:element minOccurs="0" name="orgPower" type="xs:string"/>
+      <xs:element minOccurs="0" name="powerType" type="xs:string"/>
+      <xs:element minOccurs="0" name="provinces" type="xs:string"/>
+      <xs:element minOccurs="0" name="records" type="xs:string"/>
+      <xs:element minOccurs="0" name="registerCurrency" type="xs:string"/>
+      <xs:element minOccurs="0" name="registrationAddress" type="xs:string"/>
+      <xs:element minOccurs="0" name="signedCompany" type="xs:string"/>
+      <xs:element minOccurs="0" name="socialCode" type="xs:string"/>
+      <xs:element minOccurs="0" name="sorg" type="xs:string"/>
+      <xs:element minOccurs="0" name="supplierNo" type="xs:string"/>
+      <xs:element minOccurs="0" name="taxCertificate" type="xs:string"/>
+      <xs:element minOccurs="0" name="verificationSheet" type="xs:string"/>
+      <xs:element minOccurs="0" name="voltageLevel" type="xs:string"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="tHistoricalConsumptionVo">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="attachment" type="xs:string"/>
+      <xs:element minOccurs="0" name="consumption" type="xs:string"/>
+      <xs:element minOccurs="0" name="createOrganisation" type="xs:string"/>
+      <xs:element minOccurs="0" name="customer" type="xs:string"/>
+      <xs:element minOccurs="0" name="customerNo" type="xs:string"/>
+      <xs:element minOccurs="0" name="id" type="xs:string"/>
+      <xs:element minOccurs="0" name="name" type="xs:string"/>
+      <xs:element minOccurs="0" name="no" type="xs:string"/>
+      <xs:element minOccurs="0" name="normalCustomer" type="xs:string"/>
+      <xs:element minOccurs="0" name="year" type="xs:string"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="tNoVo">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="assetNo" type="xs:string"/>
+      <xs:element minOccurs="0" name="contact" type="xs:string"/>
+      <xs:element minOccurs="0" name="customer" type="xs:string"/>
+      <xs:element minOccurs="0" name="distributionTariff" type="xs:decimal"/>
+      <xs:element minOccurs="0" name="electricityCapacity" type="xs:string"/>
+      <xs:element minOccurs="0" name="etype" type="xs:string"/>
+      <xs:element minOccurs="0" name="formoal" type="xs:string"/>
+      <xs:element minOccurs="0" name="fund" type="xs:string"/>
+      <xs:element minOccurs="0" name="id" type="xs:string"/>
+      <xs:element minOccurs="0" name="isPv" type="xs:string"/>
+      <xs:element minOccurs="0" name="lastYearElectricity" type="xs:decimal"/>
+      <xs:element minOccurs="0" name="name" type="xs:string"/>
+      <xs:element minOccurs="0" name="netHall" type="xs:string"/>
+      <xs:element minOccurs="0" name="no" type="xs:string"/>
+      <xs:element minOccurs="0" name="org" type="xs:string"/>
+      <xs:element minOccurs="0" name="powerGird" type="xs:string"/>
+      <xs:element minOccurs="0" name="powerId" type="xs:string"/>
+      <xs:element minOccurs="0" name="supplier" type="xs:string"/>
+      <xs:element minOccurs="0" name="tariff" type="xs:decimal"/>
+      <xs:element minOccurs="0" name="transformerCapacity" type="xs:string"/>
+      <xs:element minOccurs="0" name="verificationSheet" type="xs:string"/>
+      <xs:element minOccurs="0" name="voltageLevel" type="xs:string"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="tAgencyRelationshipVo">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="customerFomal" type="xs:string"/>
+      <xs:element minOccurs="0" name="endDate" type="xs:dateTime"/>
+      <xs:element minOccurs="0" name="id" type="xs:string"/>
+      <xs:element minOccurs="0" name="middlemanFormal" type="xs:string"/>
+      <xs:element minOccurs="0" name="startDate" type="xs:dateTime"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="tBankAccountVo">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="name" type="xs:string"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="insertResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="return" type="tns:objectRestResponse"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="objectRestResponse">
+    <xs:complexContent>
+      <xs:extension base="tns:baseResponse">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="data" type="xs:anyType"/>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+
+  <xs:complexType name="baseResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="errorMsg" type="xs:string"/>
+      <xs:element minOccurs="0" name="msg" type="xs:string"/>
+      <xs:element name="rel" type="xs:boolean"/>
+      <xs:element name="status" type="xs:int"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="insertCrew">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="arg0" type="tns:tCrewReqVo"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="tCrewReqVo">
+    <xs:sequence>
+      <xs:element maxOccurs="unbounded" minOccurs="0" name="crewVos" nillable="true" type="tns:tCrewVo"/>
+      <xs:element maxOccurs="unbounded" minOccurs="0" name="hydropowerVos" nillable="true" type="tns:tHydropowerVo"/>
+      <xs:element maxOccurs="unbounded" minOccurs="0" name="windVos" nillable="true" type="tns:tWindVo"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="tCrewVo">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="crew1" type="xs:string"/>
+      <xs:element minOccurs="0" name="crew10" type="xs:decimal"/>
+      <xs:element minOccurs="0" name="crew11" type="xs:decimal"/>
+      <xs:element minOccurs="0" name="crew12" type="xs:decimal"/>
+      <xs:element minOccurs="0" name="crew13" type="xs:decimal"/>
+      <xs:element minOccurs="0" name="crew14" type="xs:decimal"/>
+      <xs:element minOccurs="0" name="crew15" type="xs:string"/>
+      <xs:element minOccurs="0" name="crew16" type="xs:string"/>
+      <xs:element minOccurs="0" name="crew17" type="xs:string"/>
+      <xs:element minOccurs="0" name="crew18" type="xs:decimal"/>
+      <xs:element minOccurs="0" name="crew19" type="xs:decimal"/>
+      <xs:element minOccurs="0" name="crew2" type="xs:string"/>
+      <xs:element minOccurs="0" name="crew20" type="xs:decimal"/>
+      <xs:element minOccurs="0" name="crew21" type="xs:decimal"/>
+      <xs:element minOccurs="0" name="crew22" type="xs:decimal"/>
+      <xs:element minOccurs="0" name="crew23" type="xs:decimal"/>
+      <xs:element minOccurs="0" name="crew24" type="xs:decimal"/>
+      <xs:element minOccurs="0" name="crew25" type="xs:decimal"/>
+      <xs:element minOccurs="0" name="crew26" type="xs:decimal"/>
+      <xs:element minOccurs="0" name="crew27" type="xs:decimal"/>
+      <xs:element minOccurs="0" name="crew28" type="xs:decimal"/>
+      <xs:element minOccurs="0" name="crew3" type="xs:string"/>
+      <xs:element minOccurs="0" name="crew30" type="xs:decimal"/>
+      <xs:element minOccurs="0" name="crew34" type="xs:decimal"/>
+      <xs:element minOccurs="0" name="crew4" type="xs:decimal"/>
+      <xs:element minOccurs="0" name="crew5" type="xs:decimal"/>
+      <xs:element minOccurs="0" name="crew6" type="xs:decimal"/>
+      <xs:element minOccurs="0" name="crew7" type="xs:decimal"/>
+      <xs:element minOccurs="0" name="crew8" type="xs:decimal"/>
+      <xs:element minOccurs="0" name="crew9" type="xs:decimal"/>
+      <xs:element minOccurs="0" name="crrew31" type="xs:decimal"/>
+      <xs:element minOccurs="0" name="crrew33" type="xs:decimal"/>
+      <xs:element minOccurs="0" name="customer" type="xs:string"/>
+      <xs:element minOccurs="0" name="customerno" type="xs:string"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="tHydropowerVo">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="customer" type="xs:string"/>
+      <xs:element minOccurs="0" name="customerno" type="xs:string"/>
+      <xs:element minOccurs="0" name="hydropower1" type="xs:string"/>
+      <xs:element minOccurs="0" name="hydropower10" type="xs:decimal"/>
+      <xs:element minOccurs="0" name="hydropower11" type="xs:decimal"/>
+      <xs:element minOccurs="0" name="hydropower12" type="xs:decimal"/>
+      <xs:element minOccurs="0" name="hydropower13" type="xs:decimal"/>
+      <xs:element minOccurs="0" name="hydropower14" type="xs:string"/>
+      <xs:element minOccurs="0" name="hydropower15" type="xs:string"/>
+      <xs:element minOccurs="0" name="hydropower16" type="xs:string"/>
+      <xs:element minOccurs="0" name="hydropower2" type="xs:string"/>
+      <xs:element minOccurs="0" name="hydropower3" type="xs:string"/>
+      <xs:element minOccurs="0" name="hydropower4" type="xs:string"/>
+      <xs:element minOccurs="0" name="hydropower5" type="xs:decimal"/>
+      <xs:element minOccurs="0" name="hydropower6" type="xs:decimal"/>
+      <xs:element minOccurs="0" name="hydropower7" type="xs:decimal"/>
+      <xs:element minOccurs="0" name="hydropower8" type="xs:decimal"/>
+      <xs:element minOccurs="0" name="hydropower9" type="xs:decimal"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="tWindVo">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="customer" type="xs:string"/>
+      <xs:element minOccurs="0" name="customerno" type="xs:string"/>
+      <xs:element minOccurs="0" name="wind1" type="xs:string"/>
+      <xs:element minOccurs="0" name="wind2" type="xs:string"/>
+      <xs:element minOccurs="0" name="wind3" type="xs:decimal"/>
+      <xs:element minOccurs="0" name="wind4" type="xs:string"/>
+      <xs:element minOccurs="0" name="wind5" type="xs:string"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="insertCrewResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="return" type="tns:objectRestResponse"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="insertHighSeas">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="arg0" type="tns:highSeasReqVo"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="highSeasReqVo">
+    <xs:sequence>
+      <xs:element maxOccurs="unbounded" minOccurs="0" name="contactsVO" nillable="true" type="tns:tContactsVo"/>
+      <xs:element minOccurs="0" name="customerVO" type="tns:customerVO"/>
+      <xs:element maxOccurs="unbounded" minOccurs="0" name="historicalConsumptionVo" nillable="true" type="tns:tHistoricalConsumptionVo"/>
+      <xs:element maxOccurs="unbounded" minOccurs="0" name="noVO" nillable="true" type="tns:tNoVo"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="customerVO">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="abbreviation" type="xs:string"/>
+      <xs:element minOccurs="0" name="accountNo" type="xs:string"/>
+      <xs:element minOccurs="0" name="address_Zipcode" type="xs:string"/>
+      <xs:element minOccurs="0" name="adimit_time" type="xs:dateTime"/>
+      <xs:element minOccurs="0" name="admit_Status" type="xs:string"/>
+      <xs:element minOccurs="0" name="BPNo" type="xs:string"/>
+      <xs:element minOccurs="0" name="bank" type="xs:string"/>
+      <xs:element minOccurs="0" name="bankAccount" type="xs:string"/>
+      <xs:element minOccurs="0" name="belongDepartment" type="xs:string"/>
+      <xs:element minOccurs="0" name="businessNo" type="xs:string"/>
+      <xs:element minOccurs="0" name="capitalType" type="xs:string"/>
+      <xs:element minOccurs="0" name="city" type="xs:string"/>
+      <xs:element minOccurs="0" name="code" type="xs:string"/>
+      <xs:element minOccurs="0" name="county" type="xs:string"/>
+      <xs:element minOccurs="0" name="createOrganisation" type="xs:string"/>
+      <xs:element minOccurs="0" name="customer" type="xs:string"/>
+      <xs:element minOccurs="0" name="customerBelongGroup" type="xs:string"/>
+      <xs:element minOccurs="0" name="customerClass" type="xs:string"/>
+      <xs:element minOccurs="0" name="customerStatusCode" type="xs:string"/>
+      <xs:element minOccurs="0" name="customerTagM" type="xs:string"/>
+      <xs:element minOccurs="0" name="customerTypeC" type="xs:string"/>
+      <xs:element minOccurs="0" name="customerTypeM" type="xs:string"/>
+      <xs:element minOccurs="0" name="customer_Registered_Phone" type="xs:string"/>
+      <xs:element minOccurs="0" name="followEmployee" type="xs:string"/>
+      <xs:element minOccurs="0" name="followMiddle" type="xs:string"/>
+      <xs:element minOccurs="0" name="follower" type="xs:string"/>
+      <xs:element minOccurs="0" name="GStatus" type="xs:string"/>
+      <xs:element minOccurs="0" name="gstartTime" type="xs:dateTime"/>
+      <xs:element minOccurs="0" name="heatingCompany" type="xs:string"/>
+      <xs:element minOccurs="0" name="heatingGroup" type="xs:string"/>
+      <xs:element minOccurs="0" name="heatingMethod" type="xs:string"/>
+      <xs:element minOccurs="0" name="heatingType" type="xs:string"/>
+      <xs:element minOccurs="0" name="highTech" type="xs:string"/>
+      <xs:element minOccurs="0" name="id" type="xs:string"/>
+      <xs:element minOccurs="0" name="ifbuild" type="xs:string"/>
+      <xs:element minOccurs="0" name="important" type="xs:string"/>
+      <xs:element minOccurs="0" name="industrial" type="xs:string"/>
+      <xs:element minOccurs="0" name="industry" type="xs:string"/>
+      <xs:element minOccurs="0" name="industryE" type="xs:string"/>
+      <xs:element minOccurs="0" name="lastYear" type="xs:decimal"/>
+      <xs:element minOccurs="0" name="legalPerson" type="xs:string"/>
+      <xs:element minOccurs="0" name="MDMno" type="xs:string"/>
+      <xs:element minOccurs="0" name="majorProject" type="xs:string"/>
+      <xs:element minOccurs="0" name="name" type="xs:string"/>
+      <xs:element minOccurs="0" name="provinces" type="xs:string"/>
+      <xs:element minOccurs="0" name="records" type="xs:string"/>
+      <xs:element minOccurs="0" name="registerCurrency" type="xs:string"/>
+      <xs:element minOccurs="0" name="registrationAddress" type="xs:string"/>
+      <xs:element minOccurs="0" name="saleGroupCode" type="xs:string"/>
+      <xs:element minOccurs="0" name="signedCompany" type="xs:string"/>
+      <xs:element minOccurs="0" name="socialCode" type="xs:string"/>
+      <xs:element minOccurs="0" name="supplierNo" type="xs:string"/>
+      <xs:element minOccurs="0" name="tagF" type="xs:string"/>
+      <xs:element minOccurs="0" name="taxCertificate" type="xs:string"/>
+      <xs:element minOccurs="0" name="voltageLevel" type="xs:string"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="insertHighSeasResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="return" type="tns:objectRestResponse"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="deleteHighSeas">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="arg0" type="xs:string"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="deleteHighSeasResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="return" type="tns:objectRestResponse"/>
+    </xs:sequence>
+  </xs:complexType>
+
+</xs:schema>
+  </wsdl:types>
+  <wsdl:message name="insert">
+    <wsdl:part element="tns:insert" name="parameters">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="insertResponse">
+    <wsdl:part element="tns:insertResponse" name="parameters">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="deleteHighSeas">
+    <wsdl:part element="tns:deleteHighSeas" name="parameters">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="insertHighSeasResponse">
+    <wsdl:part element="tns:insertHighSeasResponse" name="parameters">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="insertCrew">
+    <wsdl:part element="tns:insertCrew" name="parameters">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="insertCrewResponse">
+    <wsdl:part element="tns:insertCrewResponse" name="parameters">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="insertHighSeas">
+    <wsdl:part element="tns:insertHighSeas" name="parameters">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="deleteHighSeasResponse">
+    <wsdl:part element="tns:deleteHighSeasResponse" name="parameters">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:portType name="customerWebService">
+    <wsdl:operation name="insert">
+      <wsdl:input message="tns:insert" name="insert">
+    </wsdl:input>
+      <wsdl:output message="tns:insertResponse" name="insertResponse">
+    </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="insertCrew">
+      <wsdl:input message="tns:insertCrew" name="insertCrew">
+    </wsdl:input>
+      <wsdl:output message="tns:insertCrewResponse" name="insertCrewResponse">
+    </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="insertHighSeas">
+      <wsdl:input message="tns:insertHighSeas" name="insertHighSeas">
+    </wsdl:input>
+      <wsdl:output message="tns:insertHighSeasResponse" name="insertHighSeasResponse">
+    </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="deleteHighSeas">
+      <wsdl:input message="tns:deleteHighSeas" name="deleteHighSeas">
+    </wsdl:input>
+      <wsdl:output message="tns:deleteHighSeasResponse" name="deleteHighSeasResponse">
+    </wsdl:output>
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="customerWebServiceSoapBinding" type="tns:customerWebService">
+    <soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+    <wsdl:operation name="insert">
+      <soap:operation soapAction="" style="document"/>
+      <wsdl:input name="insert">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="insertResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="insertCrew">
+      <soap:operation soapAction="" style="document"/>
+      <wsdl:input name="insertCrew">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="insertCrewResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="insertHighSeas">
+      <soap:operation soapAction="" style="document"/>
+      <wsdl:input name="insertHighSeas">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="insertHighSeasResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="deleteHighSeas">
+      <soap:operation soapAction="" style="document"/>
+      <wsdl:input name="deleteHighSeas">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="deleteHighSeasResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="customerWebService">
+    <wsdl:port binding="tns:customerWebServiceSoapBinding" name="CustomerWebServiceImplPort">
+      <soap:address location="http://localhost:9992/api/webservice/customer"/>
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

@@ -1,0 +1,327 @@
+<?xml version='1.0' encoding='UTF-8'?><wsdl:definitions xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:tns="http://contract.mdm.com" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:ns1="http://schemas.xmlsoap.org/soap/http" name="contractWebService" targetNamespace="http://contract.mdm.com">
+  <wsdl:types>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:tns="http://contract.mdm.com" elementFormDefault="unqualified" targetNamespace="http://contract.mdm.com" version="1.0">
+
+  <xs:element name="insert" type="tns:insert"/>
+
+  <xs:element name="insertDevEle" type="tns:insertDevEle"/>
+
+  <xs:element name="insertDevEleResponse" type="tns:insertDevEleResponse"/>
+
+  <xs:element name="insertResponse" type="tns:insertResponse"/>
+
+  <xs:complexType name="insertDevEle">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="arg0" type="tns:contractDevEleRequestVO"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="contractDevEleRequestVO">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="contractId" type="xs:string"/>
+      <xs:element maxOccurs="unbounded" minOccurs="0" name="devEleVO" nillable="true" type="tns:devEleVO"/>
+      <xs:element minOccurs="0" name="num" type="xs:string"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="devEleVO">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="CONTRACT_TEMPDATA1" type="xs:string"/>
+      <xs:element minOccurs="0" name="CONTRACT_TEMPDATA2" type="xs:string"/>
+      <xs:element minOccurs="0" name="CONTRACT_TEMPDATA3" type="xs:string"/>
+      <xs:element minOccurs="0" name="CONTRACT_TEMPDATA4" type="xs:string"/>
+      <xs:element minOccurs="0" name="CONTRACT_TEMPDATA5" type="xs:string"/>
+      <xs:element minOccurs="0" name="contracts" type="xs:string"/>
+      <xs:element minOccurs="0" name="ele" type="xs:decimal"/>
+      <xs:element minOccurs="0" name="id" type="xs:string"/>
+      <xs:element minOccurs="0" name="NO" type="xs:string"/>
+      <xs:element minOccurs="0" name="num" type="xs:string"/>
+      <xs:element minOccurs="0" name="price" type="xs:decimal"/>
+      <xs:element minOccurs="0" name="status" type="xs:string"/>
+      <xs:element minOccurs="0" name="timeInterval" type="xs:string"/>
+      <xs:element minOccurs="0" name="tradeDirection" type="xs:string"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="insertDevEleResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="return" type="tns:objectRestResponse"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="objectRestResponse">
+    <xs:complexContent>
+      <xs:extension base="tns:baseResponse">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="data" type="xs:anyType"/>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+
+  <xs:complexType name="baseResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="errorMsg" type="xs:string"/>
+      <xs:element minOccurs="0" name="msg" type="xs:string"/>
+      <xs:element name="rel" type="xs:boolean"/>
+      <xs:element name="status" type="xs:int"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="insert">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="arg0" type="tns:contractRequestVO"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="contractRequestVO">
+    <xs:sequence>
+      <xs:element maxOccurs="unbounded" minOccurs="0" name="electricityConsumVO" nillable="true" type="tns:electricityConsumVO"/>
+      <xs:element maxOccurs="unbounded" minOccurs="0" name="eslVO" nillable="true" type="tns:eslVO"/>
+      <xs:element maxOccurs="unbounded" minOccurs="0" name="indexRangeVO" nillable="true" type="tns:indexRangeVO"/>
+      <xs:element maxOccurs="unbounded" minOccurs="0" name="indexVO" nillable="true" type="tns:indexVO"/>
+      <xs:element maxOccurs="unbounded" minOccurs="0" name="interfaceLogVO" nillable="true" type="tns:interfaceLogVO"/>
+      <xs:element minOccurs="0" name="saleContractVO" type="tns:saleContractVO"/>
+      <xs:element maxOccurs="unbounded" minOccurs="0" name="settleInfVO" nillable="true" type="tns:settleInfVO"/>
+      <xs:element maxOccurs="unbounded" minOccurs="0" name="settleRulesVO" nillable="true" type="tns:settleRulesVO"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="electricityConsumVO">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="april" type="xs:decimal"/>
+      <xs:element minOccurs="0" name="august" type="xs:decimal"/>
+      <xs:element minOccurs="0" name="contracts" type="xs:string"/>
+      <xs:element minOccurs="0" name="createOrganisation" type="xs:string"/>
+      <xs:element minOccurs="0" name="december" type="xs:decimal"/>
+      <xs:element minOccurs="0" name="february" type="xs:decimal"/>
+      <xs:element minOccurs="0" name="january" type="xs:decimal"/>
+      <xs:element minOccurs="0" name="july" type="xs:decimal"/>
+      <xs:element minOccurs="0" name="june" type="xs:decimal"/>
+      <xs:element minOccurs="0" name="march" type="xs:decimal"/>
+      <xs:element minOccurs="0" name="may" type="xs:decimal"/>
+      <xs:element minOccurs="0" name="name" type="xs:string"/>
+      <xs:element minOccurs="0" name="november" type="xs:decimal"/>
+      <xs:element minOccurs="0" name="october" type="xs:decimal"/>
+      <xs:element minOccurs="0" name="september" type="xs:decimal"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="eslVO">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="april" type="xs:decimal"/>
+      <xs:element minOccurs="0" name="aprilPri" type="xs:decimal"/>
+      <xs:element minOccurs="0" name="august" type="xs:decimal"/>
+      <xs:element minOccurs="0" name="augustPri" type="xs:decimal"/>
+      <xs:element minOccurs="0" name="contactType" type="xs:string"/>
+      <xs:element minOccurs="0" name="contracts" type="xs:string"/>
+      <xs:element minOccurs="0" name="december" type="xs:decimal"/>
+      <xs:element minOccurs="0" name="decemberPri" type="xs:decimal"/>
+      <xs:element minOccurs="0" name="february" type="xs:decimal"/>
+      <xs:element minOccurs="0" name="februaryPri" type="xs:decimal"/>
+      <xs:element minOccurs="0" name="id" type="xs:string"/>
+      <xs:element minOccurs="0" name="january" type="xs:decimal"/>
+      <xs:element minOccurs="0" name="januaryPri" type="xs:decimal"/>
+      <xs:element minOccurs="0" name="july" type="xs:decimal"/>
+      <xs:element minOccurs="0" name="julyPri" type="xs:decimal"/>
+      <xs:element minOccurs="0" name="june" type="xs:decimal"/>
+      <xs:element minOccurs="0" name="junePri" type="xs:decimal"/>
+      <xs:element minOccurs="0" name="march" type="xs:decimal"/>
+      <xs:element minOccurs="0" name="marchPri" type="xs:decimal"/>
+      <xs:element minOccurs="0" name="may" type="xs:decimal"/>
+      <xs:element minOccurs="0" name="mayPri" type="xs:decimal"/>
+      <xs:element minOccurs="0" name="name" type="xs:dateTime"/>
+      <xs:element minOccurs="0" name="november" type="xs:decimal"/>
+      <xs:element minOccurs="0" name="novemberPri" type="xs:decimal"/>
+      <xs:element minOccurs="0" name="october" type="xs:decimal"/>
+      <xs:element minOccurs="0" name="octoberPri" type="xs:decimal"/>
+      <xs:element minOccurs="0" name="project" type="xs:string"/>
+      <xs:element minOccurs="0" name="september" type="xs:decimal"/>
+      <xs:element minOccurs="0" name="septemberPri" type="xs:decimal"/>
+      <xs:element minOccurs="0" name="year" type="xs:string"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="indexRangeVO">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="contact" type="xs:string"/>
+      <xs:element minOccurs="0" name="endValue" type="xs:decimal"/>
+      <xs:element minOccurs="0" name="id" type="xs:string"/>
+      <xs:element minOccurs="0" name="index" type="xs:string"/>
+      <xs:element minOccurs="0" name="name" type="xs:string"/>
+      <xs:element minOccurs="0" name="sectionType" type="xs:string"/>
+      <xs:element minOccurs="0" name="startValue" type="xs:decimal"/>
+      <xs:element minOccurs="0" name="value" type="xs:decimal"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="indexVO">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="default_value" type="xs:string"/>
+      <xs:element minOccurs="0" name="describition" type="xs:string"/>
+      <xs:element minOccurs="0" name="id" type="xs:string"/>
+      <xs:element minOccurs="0" name="measurement_Unit" type="xs:string"/>
+      <xs:element minOccurs="0" name="name" type="xs:string"/>
+      <xs:element minOccurs="0" name="saleContract" type="xs:string"/>
+      <xs:element minOccurs="0" name="settleRules" type="xs:string"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="interfaceLogVO">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="dataId" type="xs:string"/>
+      <xs:element minOccurs="0" name="dataName" type="xs:string"/>
+      <xs:element minOccurs="0" name="detaile" type="xs:string"/>
+      <xs:element minOccurs="0" name="id" type="xs:string"/>
+      <xs:element minOccurs="0" name="invoking" type="xs:string"/>
+      <xs:element minOccurs="0" name="name" type="xs:string"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="saleContractVO">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="approvalStatus" type="xs:string"/>
+      <xs:element minOccurs="0" name="CONTRACT_TEMPDATA1" type="xs:string"/>
+      <xs:element minOccurs="0" name="CONTRACT_TEMPDATA10" type="xs:string"/>
+      <xs:element minOccurs="0" name="CONTRACT_TEMPDATA2" type="xs:string"/>
+      <xs:element minOccurs="0" name="CONTRACT_TEMPDATA3" type="xs:string"/>
+      <xs:element minOccurs="0" name="CONTRACT_TEMPDATA4" type="xs:string"/>
+      <xs:element minOccurs="0" name="CONTRACT_TEMPDATA5" type="xs:string"/>
+      <xs:element minOccurs="0" name="CONTRACT_TEMPDATA6" type="xs:string"/>
+      <xs:element minOccurs="0" name="CONTRACT_TEMPDATA7" type="xs:string"/>
+      <xs:element minOccurs="0" name="CONTRACT_TEMPDATA8" type="xs:string"/>
+      <xs:element minOccurs="0" name="CONTRACT_TEMPDATA9" type="xs:string"/>
+      <xs:element minOccurs="0" name="caoEnd" type="xs:dateTime"/>
+      <xs:element minOccurs="0" name="caoSta" type="xs:dateTime"/>
+      <xs:element minOccurs="0" name="conNo" type="xs:string"/>
+      <xs:element minOccurs="0" name="contract_Type" type="xs:string"/>
+      <xs:element minOccurs="0" name="createTime" type="xs:string"/>
+      <xs:element minOccurs="0" name="creator" type="xs:string"/>
+      <xs:element minOccurs="0" name="creatorId" type="xs:string"/>
+      <xs:element minOccurs="0" name="custmerContact" type="xs:string"/>
+      <xs:element minOccurs="0" name="dealer_Settlement_Rule" type="xs:string"/>
+      <xs:element minOccurs="0" name="generateElecUnit" type="xs:string"/>
+      <xs:element minOccurs="0" name="generateElecUnitId" type="xs:string"/>
+      <xs:element minOccurs="0" name="IFj" type="xs:string"/>
+      <xs:element minOccurs="0" name="id" type="xs:string"/>
+      <xs:element minOccurs="0" name="ifcontact" type="xs:string"/>
+      <xs:element minOccurs="0" name="limit_ration" type="xs:string"/>
+      <xs:element minOccurs="0" name="modifier" type="xs:string"/>
+      <xs:element minOccurs="0" name="modifierId" type="xs:string"/>
+      <xs:element minOccurs="0" name="modifyTime" type="xs:string"/>
+      <xs:element minOccurs="0" name="NO" type="xs:string"/>
+      <xs:element minOccurs="0" name="name" type="xs:string"/>
+      <xs:element minOccurs="0" name="notification" type="xs:string"/>
+      <xs:element minOccurs="0" name="persent" type="xs:string"/>
+      <xs:element minOccurs="0" name="settleRules" type="xs:string"/>
+      <xs:element minOccurs="0" name="settlement_end_date" type="xs:dateTime"/>
+      <xs:element minOccurs="0" name="settlement_start_date" type="xs:dateTime"/>
+      <xs:element minOccurs="0" name="signCu" type="xs:string"/>
+      <xs:element minOccurs="0" name="signDate" type="xs:dateTime"/>
+      <xs:element minOccurs="0" name="signPeo" type="xs:string"/>
+      <xs:element minOccurs="0" name="signPeoDepartmentCode" type="xs:string"/>
+      <xs:element minOccurs="0" name="signPeoDescribe" type="xs:string"/>
+      <xs:element minOccurs="0" name="signType" type="xs:string"/>
+      <xs:element minOccurs="0" name="status" type="xs:string"/>
+      <xs:element minOccurs="0" name="text_ContractT" type="xs:string"/>
+      <xs:element minOccurs="0" name="total_Amount" type="xs:string"/>
+      <xs:element minOccurs="0" name="tradingDirection" type="xs:string"/>
+      <xs:element minOccurs="0" name="tradingPrice" type="xs:string"/>
+      <xs:element minOccurs="0" name="tradingVariety" type="xs:string"/>
+      <xs:element minOccurs="0" name="unitName" type="xs:string"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="settleInfVO">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="CONTRACT_TEMPDATA1" type="xs:string"/>
+      <xs:element minOccurs="0" name="CONTRACT_TEMPDATA2" type="xs:string"/>
+      <xs:element minOccurs="0" name="CONTRACT_TEMPDATA3" type="xs:string"/>
+      <xs:element minOccurs="0" name="CONTRACT_TEMPDATA4" type="xs:string"/>
+      <xs:element minOccurs="0" name="CONTRACT_TEMPDATA5" type="xs:string"/>
+      <xs:element minOccurs="0" name="contact" type="xs:string"/>
+      <xs:element minOccurs="0" name="date" type="xs:string"/>
+      <xs:element minOccurs="0" name="ele" type="xs:string"/>
+      <xs:element minOccurs="0" name="eleeve" type="xs:string"/>
+      <xs:element minOccurs="0" name="inContact" type="xs:string"/>
+      <xs:element minOccurs="0" name="name" type="xs:string"/>
+      <xs:element minOccurs="0" name="settleall" type="xs:string"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="settleRulesVO">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="contactType" type="xs:string"/>
+      <xs:element minOccurs="0" name="details" type="xs:string"/>
+      <xs:element minOccurs="0" name="id" type="xs:string"/>
+      <xs:element minOccurs="0" name="name" type="xs:string"/>
+      <xs:element minOccurs="0" name="salesorg" type="xs:string"/>
+      <xs:element minOccurs="0" name="settlemenType" type="xs:string"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="insertResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="return" type="tns:objectRestResponse"/>
+    </xs:sequence>
+  </xs:complexType>
+
+</xs:schema>
+  </wsdl:types>
+  <wsdl:message name="insertDevEle">
+    <wsdl:part element="tns:insertDevEle" name="parameters">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="insertDevEleResponse">
+    <wsdl:part element="tns:insertDevEleResponse" name="parameters">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="insertResponse">
+    <wsdl:part element="tns:insertResponse" name="parameters">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="insert">
+    <wsdl:part element="tns:insert" name="parameters">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:portType name="contractWebService">
+    <wsdl:operation name="insertDevEle">
+      <wsdl:input message="tns:insertDevEle" name="insertDevEle">
+    </wsdl:input>
+      <wsdl:output message="tns:insertDevEleResponse" name="insertDevEleResponse">
+    </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="insert">
+      <wsdl:input message="tns:insert" name="insert">
+    </wsdl:input>
+      <wsdl:output message="tns:insertResponse" name="insertResponse">
+    </wsdl:output>
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="contractWebServiceSoapBinding" type="tns:contractWebService">
+    <soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+    <wsdl:operation name="insertDevEle">
+      <soap:operation soapAction="" style="document"/>
+      <wsdl:input name="insertDevEle">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="insertDevEleResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="insert">
+      <soap:operation soapAction="" style="document"/>
+      <wsdl:input name="insert">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="insertResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="contractWebService">
+    <wsdl:port binding="tns:contractWebServiceSoapBinding" name="ContractWebServiceImplPort">
+      <soap:address location="http://10.126.15.230:9220/gapi/webservice/contract"/>
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>
